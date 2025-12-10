@@ -1,3 +1,5 @@
+const API_BASE = 'http://localhost:5000';
+
 const valueInput = document.getElementById('valueInput');
 const insertBtn = document.getElementById('insertBtn');
 const lookupBtn = document.getElementById('lookupBtn');
@@ -9,9 +11,26 @@ function setStatus(message, variant = 'ok') {
   statusArea.classList.add(variant);
 }
 
+async function callApi(path, value) {
+  if (!value) {
+    return { ok: false, message: 'Please enter a value.' };
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ value }),
+    });
+    return await res.json();
+  } catch (err) {
+    return { ok: false, message: 'Could not reach server. Is Python running?' };
+  }
+}
+
 async function handleInsert() {
   const value = valueInput.value.trim();
-  const result = await window.electronAPI.insert(value);
+  const result = await callApi('/insert', value);
   if (result.ok) {
     setStatus(result.message, 'ok');
   } else {
@@ -21,7 +40,7 @@ async function handleInsert() {
 
 async function handleLookup() {
   const value = valueInput.value.trim();
-  const result = await window.electronAPI.lookup(value);
+  const result = await callApi('/lookup', value);
   if (result.ok) {
     setStatus(result.message, result.exists ? 'ok' : 'error');
   } else {
