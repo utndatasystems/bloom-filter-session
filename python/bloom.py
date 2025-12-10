@@ -42,6 +42,13 @@ def lookup_route():
     return jsonify({"ok": True, "exists": exists, "message": message})
 
 
+@app.route("/store", methods=["GET"])
+def store_route():
+    """Return the current contents of the in-memory bloom_store."""
+    return jsonify({"ok": True, "values": sorted(bloom_store)})
+
+
+
 if __name__ == "__main__":
     # Hosts on all interfaces for local testing; adjust as needed.
     app.run(host="0.0.0.0", port=5000)
