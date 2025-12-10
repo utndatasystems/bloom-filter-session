@@ -1,0 +1,19 @@
+{
+  "name": "bloom-filter-demo",
+  "version": "1.0.0",
+  "description": "Bloom Filter Demo",
+  "main": "main.js",
+  "scripts": {
+    "start": "env electron .",
+    "build": "electron-packager . bloom-filter-demo --platform=darwin,win32,linux"
+  },
+  "dependencies": {
+    "electron": "^26.0.0",
+    "node-calls-python": "^1.10.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.0"
+  },
+  "author": "author",
+  "license": "MIT"
+}

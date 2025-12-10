@@ -1,0 +1,138 @@
+:root {
+  --bg: radial-gradient(circle at 20% 20%, #1b2735, #0d1218);
+  --panel: #0f1724;
+  --panel-border: #23324a;
+  --text: #e8eef7;
+  --muted: #9fb2cc;
+  --accent: #00d0ff;
+  --accent-strong: #00a4d1;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Avenir Next", "Futura", "Trebuchet MS", sans-serif;
+}
+
+.card {
+  width: min(460px, 92vw);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+header {
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.subtext {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.form label {
+  display: block;
+  margin: 10px 0 6px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.control {
+  position: relative;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--panel-border);
+  background: #0b121c;
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 208, 255, 0.2);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+button {
+  cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border 0.12s ease;
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 12px 24px rgba(0, 166, 209, 0.35);
+}
+
+button.ghost {
+  background: #0b121c;
+  border-color: var(--panel-border);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.status {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px dashed var(--panel-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  min-height: 52px;
+  line-height: 1.5;
+}
+
+.status.ok {
+  border-color: rgba(0, 208, 255, 0.5);
+}
+
+.status.error {
+  border-color: rgba(255, 89, 107, 0.6);
+  color: #ff9aa6;
+}

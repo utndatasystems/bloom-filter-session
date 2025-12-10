@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Filter Demo</title>
+  <link rel="stylesheet" href="renderer.css" />
+</head>
+<body>
+  <main class="card">
+    <header>
+      <p class="eyebrow">Bloom Filter</p>
+      <h1>Insert or lookup a value</h1>
+      <p class="subtext">Type any string, then send it to Bloom Filter to insert or lookup.</p>
+    </header>
+
+    <section class="form">
+      <label for="valueInput">Value</label>
+      <div class="control">
+        <input id="valueInput" type="text" placeholder="e.g. Name" autocomplete="off" />
+      </div>
+      <div class="actions">
+        <button id="insertBtn" type="button" class="primary">Insert</button>
+        <button id="lookupBtn" type="button" class="ghost">Lookup</button>
+      </div>
+    </section>
+
+    <section class="status" id="statusArea" aria-live="polite">
+      Waiting for input.
+    </section>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
