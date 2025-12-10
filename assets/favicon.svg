@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bloom icon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d0ff"/>
+      <stop offset="100%" stop-color="#005a7c"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0f1724"/>
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g)" opacity="0.35"/>
+  <text x="50%" y="53%" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#e8eef7">B</text>
+</svg>
