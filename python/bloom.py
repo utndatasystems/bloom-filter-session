@@ -52,7 +52,7 @@ def store_route():
 if __name__ == "__main__":
     # Hosts on all interfaces for local testing; adjust as needed.
     context = (
-        "/etc/letsencrypt/live/bloom-filter.ddns.net/fullchain.pem",
-        "/etc/letsencrypt/live/bloom-filter.ddns.net/privkey.pem",
+        "/home/ubuntu/bloom-filter-session/certs/fullchain.pem",
+        "/home/ubuntu/bloom-filter-session/certs/privkey.pem",
     )
     app.run(host="0.0.0.0", port=5000, ssl_context=context)
